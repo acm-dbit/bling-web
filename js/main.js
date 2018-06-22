@@ -12,10 +12,8 @@ function login() {
         id: id,
         pass: pass
       },
-      crossDomain: true,
-      cache: false,
       
-      success(response) {
+      success: function(response) {
         var res = JSON.parse(response);
 
         if (res.res_type == "failed") {
@@ -27,6 +25,10 @@ function login() {
           $("#result").text("Logged in as " + res.fac_name);
           console.log("Logged in as " + res.fac_name);
         }
+      },
+
+      error: function(error){
+        console.log(error);
       }
 
     });
