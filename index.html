@@ -3,28 +3,38 @@
 <head>
     <meta charset="utf-8" />
     <title>Bling Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap and jQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
     <script type="text/javascript" src="js/fetch.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body>
-    <h2>Bling Web</h2>
-    <br><br>
-        ID <br> 
-        <input type="text" name="id" id="id"> <br>
-        Password <br> 
-        <input type="password" name="pass" id="pass"> <br>
+<body class="bg-primary">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="display-2 text-center">Bling Web</div>
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title text-center text-dark">Login</h2>
+                </div>
+                <div class="card-body">
+                    <input type="text" class="form-control form-control-lg" name="username" id="id" placeholder="username">
+                    <br>
+                    <input type="password" class="form-control form-control-lg" name="password" id="pass" placeholder="password">
+                    <br>
+                    <input type="submit" class="form-control btn btn-success" onclick="login()" value="Login">
 
-        <button onclick="login()">Login</button>
-    <div id="result">
-        Result
-    </div>
-    <br>
-    <br>
-    <input type="submit" value="Show Messages" id="btnDisplay" onclick="displayMessage()">
-        <div id="show">
-            
+                    <div class="text-danger" id="result"></div>
+                </div>
+            </div>
         </div>
-
+        <div class="col-sm-4"></div>
+    </div>     
 </body>
 </html>
