@@ -11,16 +11,38 @@ function displayMessage (){
 			var res = JSON.parse(data);
 			console.log(res);
 			
-			var html = "";
+			var msg_html = "";
 			for(var a = 0; a<res.length; a++ ){
-				var date = res[a].date;
-				var subject = res[a].subject;
-				var message = res[a].message;
+				
+				var msg_date = res[a].date;
+				var msg_time = res[a].time;
+				var msg_subject = res[a].subject;
+				var message_content = res[a].message;
 
-				html += date + subject + message;
-				html += "<br>"
+		      
+		      var msg_html =
+		       '<div class="col-4-lg">'+
+		        '<div class="card border-secondary mb-3" style="width:18rem;">'+
+		            '<div class="card-body">'+
+		                '<div class="card-title">'+
+		                    '<ul>'+
+		                        '<li>'+
+		                                '<div > <b>Subject</b> : <br>'+msg_subject+'</div>'+
+		                                '<b>Message</b> : <br>'+message_content+
+		                        '</li>'+
+		                  ' </ul>'+
+		                '</div>'+
+		            '</div>'+
+		            '<div class="card-footer">'+
+		                '<span>'+msg_date+'</span>'+ '&emsp;' +
+		                '<span>'+msg_time+'</span>'+
+		            '</div>'+
+		         '</div>'+
+		        '</div>';
+		         $("#show").append(msg_html);
+
 			}
-			document.getElementById("show").innerHTML = html;
+			
 		},
 
 		error: function(error){

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sent Messages</title>
+    <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap and jQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -13,12 +13,130 @@
     <!-- Custom JS -->
     <script src="js/main.js"></script>
     <script src="js/fetch.js"></script>   
+    <script src="js/send.js"></script>
+    <style type="text/css">
+        
+      .jumbotron-fluid {
+            padding-top: 7px; 
+            }
+       /*.card: hover {
+        -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+        box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+       }    */ 
+    </style>
 </head>
 <body>
-    <input type="button" class="btn btn-warning" onclick="logout()" value="Logout">
-    <div id="show">  </div>
-    <script>
-            displayMessage();
-    </script>
+    <div class="jumbotron-fluid bg-info text-white" style="background: #aaa; height: 8.5em;">
+        <div class="container">
+            
+            <h1 class="display-4">Bling<img src="dbit.png" height="100" width="100" align="right"></h1>
+
+            <p class="lead"> A notice sharing application for Don Bosco Institute of Technology</p>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <br>
+        <div class="row">
+
+         <input type="button" class="btn btn-warning" onclick="logout()" value="Logout">    
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
+                    Send New Message
+                </button>
+                <div class="modal fade" id="mymodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                 <h4 class="modal-title">New Message</h4>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    &times;
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                       
+                                        <input class="form-control" placeholder="Subject"
+                                                type="text" id="inputSub"/>
+                                    </div>
+                                    <div class="form-group">
+                                        
+                                       
+                                    <div class="form-input">
+                                        <select id="dept">
+                                          <option>Computers</option>
+                                          <option>EXTC</option>
+                                          <option>IT</option>
+                                          <option>Mechanical</option>
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        
+                                         <div class="item-input">
+                                        <select id="year">
+                                           <option>FE</option>
+                                           <option>SE</option>
+                                           <option>TE</option>
+                                           <option>BE</option>
+                                       </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        
+                                        <textarea id="msg" placeholder="Type message here..." style="height: 13em; width: 29em;"></textarea>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" onclick="send()">Send</button>
+                                <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>    
+        
+    </div>
+   <br>
+        <div class="container">
+            <div class="row">
+                      <div id="show"></div>
+            </div>
+        </div>
+         <script>
+               displayMessage();
+         </script>
+    <!-- <div class="container">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-md-12">
+                <div id="Carousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                  </ol>
+
+                  <div class="carousel inner">
+                      <div class="item active">
+                          <div class="row">
+                              <div class="col-md-3"><a href="#" class="thumbnail"></a>                                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
 </body>
 </html>
