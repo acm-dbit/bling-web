@@ -12,7 +12,7 @@ function displayMessage (){
 			console.log(res);
 			
 			var msg_html = "";
-			for(var a = 0; a<res.length; a++ ){
+			for(var a = res.length - 1; a >= 0; a--){
 				
 				var msg_date = res[a].date;
 				var msg_time = res[a].time;
