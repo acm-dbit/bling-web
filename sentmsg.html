@@ -19,11 +19,16 @@
       .jumbotron-fluid {
             padding-top: 7px; 
             }
-       /*.card: hover {
-        -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
-        -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
-        box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
-       }    */ 
+
+       .accordion .card-header{
+            padding: 5px;
+           
+       } 
+       .accordion .card-body{
+            padding: 5px;
+            
+       } 
+    
     </style>
 </head>
 <body>
@@ -62,42 +67,91 @@
                                         <input class="form-control" placeholder="Subject"
                                                 type="text" id="inputSub"/>
                                     </div>
+                                    
                                     <div class="form-group">
-                                        
-                                       
-                                    <div class="form-input">
-                                        <select id="dept">
-                                          <option>Computers</option>
-                                          <option>EXTC</option>
-                                          <option>IT</option>
-                                          <option>Mechanical</option>
-                                        </select>
-                                      </div>
+                                    
+                                    <input type="file" class="form-control-file" id="upload">
                                     </div>
 
                                     <div class="form-group">
-                                        
-                                         <div class="item-input">
-                                        <select id="year">
-                                           <option>FE</option>
-                                           <option>SE</option>
-                                           <option>TE</option>
-                                           <option>BE</option>
-                                       </select>
+                                        <div class="accordion" id="accordion">
+                                            <div class="card ">
+                                                <div class="card-header collapsed " aria-expanded="true" data-toggle="collapse" data-patent="#accordion" href="#collapseone">
+                                                    <a class="card-title">
+                                                        Computers 
+                                                    </a>
+                                                </div>
+
+                                                <div id="collapseone" class="card-block collapse">
+                                                    <div class="card-body">
+                                                        <a href="#" class="btn btn-primary btn-sm" id="a1">All</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="1">SE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="2">TE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="3">BE</a>                                     
+                                                    </div>
+                                                </div>
+
+                                                <div class="card-header collapsed" aria-expanded="true" data-toggle="collapse" data-patent="#accordion" href="#collapsetwo">
+                                                    <a class="card-title">
+                                                        IT
+                                                    </a>
+                                                </div>
+
+                                                <div id="collapsetwo" class="card-block collapse">
+                                                      <div class="card-body">
+                                                        
+                                                          <a href="#" class="btn btn-primary btn-sm" id="a2">All</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="4">SE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="5">TE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="6">BE</a>
+                                                      
+                                                                                
+                                                    </div>                                      
+                                                </div>
+                                                <div class="card-header collapsed" aria-expanded="true" data-toggle="collapse" data-patent="#accordion" href="#collapsethree">
+                                                    <a class="card-title">
+                                                       EXTC
+                                                    </a>
+                                                </div>
+
+                                                <div id="collapsethree" class="card-block collapse">
+                                                        <div class="card-body">
+                                                       <a href="#" class="btn btn-primary btn-sm" id="a3">All</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="7">SE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="8">TE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="9">BE</a>
+                                                    </div>                                     
+                                                </div>
+                                                <div class="card-header collapsed" aria-expanded="true" data-toggle="collapse" data-patent="#accordion" href="#collapsefor">
+                                                    <a class="card-title">
+                                                        Mechanical
+                                                    </a>
+                                                </div>
+
+                                                <div id="collapsefor" class="card-block collapse">
+                                                     <div class="card-body">
+                                                       <a href="#" class="btn btn-primary btn-sm" id="a4">All</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="10">SE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="11">TE</a>
+                                                          <a href="#" class="btn btn-secondary btn-sm" id="12">BE</a>
+                                                    </div>                                      
+                                                </div>
+                                            </div>
                                         </div>
-
                                     </div>
+
                                     <div class="form-group">
                                         
-                                        <textarea id="msg" placeholder="Type message here..." style="height: 13em; width: 29em;"></textarea>
+                                        <textarea  class="form-control" id="msg" placeholder="Type message here..." ></textarea>
+
 
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" onclick="send()">Send</button>
                                 <button type="button" class="btn btn-danger"
                                             data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-success" onclick="send()">Send Message</button>
                             </div>
                         </div>
                     </div>
@@ -110,33 +164,16 @@
    <br>
         <div class="container">
             <div class="row">
+                <div class="w-100 p-3">
+                    
                       <div id="show"></div>
+                </div>
+
             </div>
         </div>
          <script>
                displayMessage();
          </script>
-    <!-- <div class="container">
-        <div class="row" style="margin-top: 100px;">
-            <div class="col-md-12">
-                <div id="Carousel" class="carousel slide">
-                    <ol class="carousel-indicators">
-                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel" data-slide-to="1"></li>
-                    <li data-target="#carousel" data-slide-to="2"></li>
-                  </ol>
-
-                  <div class="carousel inner">
-                      <div class="item active">
-                          <div class="row">
-                              <div class="col-md-3"><a href="#" class="thumbnail"></a>                                
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
 </body>
 </html>

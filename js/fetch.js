@@ -22,13 +22,13 @@ function displayMessage (){
 		      
 		      var msg_html =
 		       '<div class="col-4-lg">'+
-		        '<div class="card border-secondary mb-3" style="width:18rem;">'+
+		        '<div class="card border-secondary mb-3">'+
 		            '<div class="card-body">'+
 		                '<div class="card-title">'+
 		                    '<ul>'+
 		                        '<li>'+
-		                                '<div > <b>Subject</b> : <br>'+msg_subject+'</div>'+
-		                                '<b>Message</b> : <br>'+message_content+
+		                                '<div > <b>Subject</b> : '+msg_subject+'</div>'+
+		                                '<b>Message</b> : '+message_content+
 		                        '</li>'+
 		                  ' </ul>'+
 		                '</div>'+
