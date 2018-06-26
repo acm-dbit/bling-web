@@ -32,6 +32,18 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="dbit.png" alt="DBIT Logo" style="width: 40px; height: 40px;">
+        </a>
+        <a class="navbar-brand" href="#">Bling Web</a>
+        <input type="button" class="btn btn-warning" onclick="logout()" value="Logout" style="margin-left: 80%;">
+    </nav>
+
+    <nav class="navbar navbar-expand-sm fixed-bottom">
+        <button type="button" class="btn btn-primary border border-dark" data-toggle="modal" data-target="#mymodal" style="margin-left: 95%">New</button>
+    </nav>
+
     <div class="jumbotron-fluid bg-info text-white" style="background: #aaa; height: 8.5em;">
         <div class="container">
             
@@ -45,12 +57,8 @@
     <div class="container">
         <br>
         <div class="row">
-
-         <input type="button" class="btn btn-warning" onclick="logout()" value="Logout">    
             <div class="col-md-3">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
-                    Send New Message
-                </button>
+                
                 <div class="modal fade" id="mymodal">
                     <div class="modal-dialog">
                         <div class="modal-content">
